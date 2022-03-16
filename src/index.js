@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
 import reportWebVitals from './reportWebVitals';
+// import TestCol from './TestCol';
+// import Mtl from './page/mtl/Mtl';
+import Customize from './page/customize/Customize';
+// import CusMiDetail from './page/customize/CusMiDetail';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <TestCol /> */}
+    {/* <Mtl /> */}
+    <Customize />
+    {/* <CusMiDetail /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

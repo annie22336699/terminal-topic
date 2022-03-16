@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <style>
+      
+      .left-area,
+      .mid-area,
+      .right-area {
+        height: 100vh;
+      }
+      .logo,
+      .menu {
+        height: 20%;
+        padding-bottom: 10%;
+        padding-top: 2rem;
+        display: none;
+      }
+      .left-area,
+      .right-area {
+        display: flex;
+      }
+      .left-area {
+        position: absolute;
+        transform: translate(-100%);
+        /* display: none; */
+        transition: 0.5s ease-in-out;
+      }
+      .right-area {
+        position: absolute;
+        transform: translate(100%);
+        /* display: none; */
+        transition: 0.5s ease-in-out;
+        right:0%;
+      }
+      .la-menu {
+        border-right: 1px #c4c4c4 solid;
+      }
+      .ra-menu {
+        border-left: 1px #c4c4c4 solid;
+      }
+      .logoimg,
+      .buger,
+      .mem,
+      .cart,
+      .tech {
+        width: 80px;
+        height: 80px;
+        background-color: #ccc;
+        margin: auto;
+      }
+      .choose {
+        border-bottom: 1px #c4c4c4 solid;
+      }
+      .dec,
+      .ing {
+        text-align: center;
+      }
+      .mtlimg {
+        width: 85px;
+        height: 85px;
+      }
+      .mtlimg > img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 5px solid transparent;
+      }
+      .mtlBtn-l,
+      .mtlBtn-r {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0.5rem;
+      }
+      .mtlLBtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+      }
+      .mtlRBtn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+      }
+      .mtlBtnIn .mtlLBtn:hover {
+        transform: scale(1.03);
+        transition: 0.5s;
+      }
+      .mtlimg > img:focus {
+        border: 5px solid #eed19a;
+        transition: 0.5s;
+      }
+      .mtlimg-r {
+        width: 35px;
+        height: 35px;
+        box-sizing: content-box;
+      }
+      .mtlimg-r > img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+      .la-btn,
+      .ra-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        cursor: pointer;
+        position: relative;
+      }
+      .la-btn-box {
+        position: absolute;
+        opacity: 0;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+      }
+      .mtlView {
+        overflow: hidden;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row mtlView">
+        <div class="col-3 left-area mx-auto px-0">
+          <div class="la-menu col">
+            <div class="logo">
+              <div class="col-6 logoimg"></div>
+              <div class="col-6"></div>
+            </div>
+            <div class="mtlBtn-l col p-0">
+              <div class="d-flex choose">
+                <div class="dec col-6">
+                  <img src="" alt="" />
+                  <div>123</div>
+                </div>
+                <div class="ing col-6">
+                  <img src="" alt="" />
+                  <div>456</div>
+                </div>
+              </div>
+              <div class="mtlBtnIn d-flex flex-wrap pt-3 px-2">
+                <div class="mtlLBtn col-4">
+                  <div class="mtlimg">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname ch-cont-14">例如鮭魚</div>
+                </div>
+                <div class="mtlLBtn col-4">
+                  <div class="mtlimg">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname ch-cont-14">例如鮭魚</div>
+                </div>
+                <div class="mtlLBtn col-4">
+                  <div class="mtlimg">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname ch-cont-14">例如鮭魚</div>
+                </div>
+                <div class="mtlLBtn col-4">
+                  <div class="mtlimg">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname ch-cont-14">例如鮭魚</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="la-btn">
+            <input type="checkbox" class="la-btn-box" />>>
+          </div>
+        </div>
+        <div class="col-12 mid-area">2</div>
+        <div class="col-3 right-area mx-auto px-0">
+          <div class="ra-btn"><<</div>
+          <div class="ra-menu col">
+            <div class="menu">
+              <div class="buger"></div>
+              <div class="mem"></div>
+              <div class="cart"></div>
+              <div class="tech"></div>
+            </div>
+            <div class="mtlBtn-r col p-0">
+              <div class="d-flex choose">
+                <div class="dec col-6">
+                  <img src="" alt="" />
+                  <div>123</div>
+                </div>
+                <div class="ing col-6">
+                  <img src="" alt="" />
+                  <div>456</div>
+                </div>
+              </div>
+              <div class="mtlBtnIn pt-3 px-2">
+                <div class="mtlRBtn">
+                  <div class="mtlimg-r">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname-r ch-cont-14 col-9">例如鮭魚</div>
+                  <div class="mtlDelIcon">X</div>
+                </div>
+                <div class="mtlRBtn">
+                  <div class="mtlimg-r">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname-r ch-cont-14 col-9">例如鮭魚</div>
+                  <div class="mtlDelIcon">X</div>
+                </div>
+                <div class="mtlRBtn">
+                  <div class="mtlimg-r">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname-r ch-cont-14 col-9">例如鮭魚</div>
+                  <div class="mtlDelIcon">X</div>
+                </div>
+                <div class="mtlRBtn">
+                  <div class="mtlimg-r">
+                    <img
+                      src="./public/img/f2b74d288e7123720ac3fe25345f1eae.jfif"
+                      alt=""
+                    />
+                  </div>
+                  <div class="mtlname-r ch-cont-14 col-9">例如鮭魚</div>
+                  <div class="mtlDelIcon">X</div>
+                </div>
+              </div>
+              <div class="btn">
+                <button>儲存編輯</button>
+                <button>下一步</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
