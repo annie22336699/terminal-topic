@@ -31,13 +31,13 @@
       }
       .left-area {
         position: absolute;
-        transform: translate(-100%);
+        transform: translate(-50%);
         /* display: none; */
         transition: 0.5s ease-in-out;
       }
       .right-area {
         position: absolute;
-        transform: translate(100%);
+        transform: translate(50%);
         /* display: none; */
         transition: 0.5s ease-in-out;
         right:0%;
@@ -124,7 +124,7 @@
       }
       .la-btn-box {
         position: absolute;
-        opacity: 0;
+        /* opacity: 0; */
         height: 30px;
         width: 30px;
         cursor: pointer;
@@ -132,6 +132,9 @@
       .mtlView {
         overflow: hidden;
         position: relative;
+      }
+      .la-btn .la-btn-box:checked {
+        background-color: blue;
       }
     </style>
   </head>
@@ -196,7 +199,7 @@
             </div>
           </div>
           <div class="la-btn">
-            <input type="checkbox" class="la-btn-box" />>>
+            <input type="checkbox" class="la-btn-box"/>>>
           </div>
         </div>
         <div class="col-12 mid-area">2</div>

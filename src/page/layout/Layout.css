@@ -6,12 +6,6 @@
   border-left: 1px solid #c4c4c4;
   height: 100%;
 }
-
-.aside-fixed {
-  position: fixed;
-  z-index: 3;
-  background-color: #f7f6f3;
-}
 .mobile-top {
   display: none;
   justify-content: space-between;
@@ -106,11 +100,23 @@
   fill: #575757;
 }
 
+@media only screen and (min-width: 577px) and (max-width: 960px) {
+  .logo-box {
+    width: 40px;
+    height: 40px;
+  }
+  .layout-title {
+    height: 8rem;
+    font-size: 4rem;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .mobile-adj {
     display: none;
   }
   .layout-title {
+    height: 7rem;
     font-size: 2.4rem;
     line-height: 3.6rem;
     letter-spacing: 0.54rem;
@@ -123,14 +129,5 @@
   .mobile-top {
     display: flex;
     padding: 0 15px;
-  }
-}
-@media only screen and (min-width: 577px) and (max-width: 960px) {
-  .logo-box {
-    width: 40px;
-    height: 40px;
-  }
-  .layout-title {
-    font-size: 4rem;
   }
 }

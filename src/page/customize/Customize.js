@@ -3,8 +3,11 @@ import './customize.scss';
 import MtlLeft from './components/MtlLeft';
 import MtlMid from './components/MtlMid';
 import MtlRight from './components/MtlRight';
+import { useState } from 'react';
 
 function Customize() {
+  const [mtlData, setMtlData] = useState('');
+
   return (
     <>
       <div className="mtlHeader">
@@ -12,7 +15,7 @@ function Customize() {
       </div>
       <div className="container-fluid customize">
         <div className="row mtlView">
-          <MtlLeft />
+          <MtlLeft setMtlData={setMtlData} />
           <MtlMid />
           <MtlRight />
         </div>

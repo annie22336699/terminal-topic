@@ -73,6 +73,23 @@ $font-family-sans-serif: 'title', 'content';
   }
 }
 
+// 滿版撐高，請放在最外圍，小於100vh會撐高至100vh
+// 溫馨提醒：title下有br標籤請刪掉，不然會出現卷軸
+$min-height-lg : calc(100vh - 14rem);
+$min-height-md : calc(100vh - 12rem);
+$min-height-sm : calc(100vh - 11rem);
+.min-hi{
+  margin: 0;
+  min-height: $min-height-lg;
+
+  @include pad {
+    min-height: $min-height-md;
+  }
+  @include mobile {
+    min-height: $min-height-sm;
+  }
+}
+
 // 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
 // 全站都會使用的共同樣式
 

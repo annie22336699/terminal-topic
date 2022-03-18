@@ -2,16 +2,31 @@ import { ReactComponent as Hamburger } from '../../../imgs/hamburger.svg';
 import { ReactComponent as Cart } from '../../../imgs/cart.svg';
 import { ReactComponent as Help } from '../../../imgs/help-circle.svg';
 import { ReactComponent as Rectangle } from '../../../imgs/rectangle.svg';
-import { ReactComponent as ArrR } from '../../../imgs/arrow-right-noccircle.svg';
+import { ReactComponent as ArrL } from '../../../imgs/arrow-left-noccircle.svg';
 import MtlRBtn from './MtlRBtn';
+import { useState } from 'react';
 
 function MtlRight() {
+  const [openRArea, setOpenRArea] = useState(false);
+
   return (
     <>
-      <div className="right-area mx-auto px-0">
-        <div className="ra-btn">
+      <div
+        className="right-area mx-auto px-0"
+        style={
+          openRArea
+            ? { transform: 'translate(calc( 100% - 30px))' }
+            : { transform: 'translate(0%)' }
+        }
+      >
+        <div
+          className="ra-btn"
+          onClick={() => {
+            setOpenRArea(!openRArea);
+          }}
+        >
           <input type="checkbox" className="la-btn-box" />
-          <ArrR className="arrR" />
+          <ArrL className="arrL" />
         </div>
         <div className="ra-menu col px-0">
           <div className="menuMtl">
@@ -36,23 +51,12 @@ function MtlRight() {
                 <div>營養分析</div>
               </div>
             </div>
-            <div className="mtlBtnIn-R pt-3 px-2">
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-              <MtlRBtn />
-            </div>
+            <div className="mtlBtnIn-R pt-3 px-2"></div>
             <div className="btn">
-              <button className="btn-sm btn-outline-primary primeal-btn-outline my-2">
+              <button className="btn-sm btn-outline-primary primeal-btn-outline m-2">
                 儲存編輯
               </button>
-              <button className="btn-sm btn-primary primeal-btn my-2">
+              <button className="btn-sm btn-primary primeal-btn m-2">
                 下一步
               </button>
             </div>
