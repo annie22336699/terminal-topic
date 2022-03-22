@@ -3,10 +3,23 @@ import './customize.scss';
 import MtlLeft from './components/MtlLeft';
 import MtlMid from './components/MtlMid';
 import MtlRight from './components/MtlRight';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { mtlData } from './sushiMtlTest';
+import config from '../../Config';
 
 function Customize() {
-  const [mtlData, setMtlData] = useState('');
+  const [addMtlData, setAddMtlData] = useState({});
+
+  // useEffect(() => {
+  //   const catchData = async () => {
+  //     const mtlRes = await fetch(config.GET_MTLS);
+  //     const mtlObj = await mtlRes.json();
+  //     const mtlData = mtlObj.rows;
+
+  //     console.log(mtlData);
+  //   };
+  //   catchData();
+  // }, []);
 
   return (
     <>
@@ -15,9 +28,21 @@ function Customize() {
       </div>
       <div className="container-fluid customize">
         <div className="row mtlView">
-          <MtlLeft setMtlData={setMtlData} />
-          <MtlMid />
-          <MtlRight />
+          <MtlLeft
+            mtlData={mtlData}
+            addMtlData={addMtlData}
+            setAddMtlData={setAddMtlData}
+          />
+          <MtlMid
+            mtlData={mtlData}
+            addMtlData={addMtlData}
+            setAddMtlData={setAddMtlData}
+          />
+          <MtlRight
+            mtlData={mtlData}
+            addMtlData={addMtlData}
+            setAddMtlData={setAddMtlData}
+          />
         </div>
       </div>
     </>

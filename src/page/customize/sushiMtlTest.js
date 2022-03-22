@@ -8,8 +8,10 @@ const mtlData = [
     mtl_img_path: '/img/mtl/mtl_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
     mtl_value: 5,
     mtl_print_time: 30,
-    mtl_3d_img_path: './mtl_3d_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
-    mtl_3d_normalmap_img_path: './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
+    mtl_3d_img_path:
+      './img/mtl_3d_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
+    mtl_3d_normalmap_img_path:
+      './img/mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
     mtl_sugar: 2.5,
     mtl_oil: 0,
     mtl_protein: 20,
@@ -27,7 +29,8 @@ const mtlData = [
     mtl_value: 5,
     mtl_print_time: 30,
     mtl_3d_img_path: './mtl_3d_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
-    mtl_3d_normalmap_img_path: './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
+    mtl_3d_normalmap_img_path:
+      './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
     mtl_sugar: 2.5,
     mtl_oil: 0,
     mtl_protein: 20,
@@ -45,7 +48,8 @@ const mtlData = [
     mtl_value: 5,
     mtl_print_time: 30,
     mtl_3d_img_path: './mtl_3d_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
-    mtl_3d_normalmap_img_path: './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
+    mtl_3d_normalmap_img_path:
+      './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
     mtl_sugar: 2.5,
     mtl_oil: 0,
     mtl_protein: 20,
@@ -63,7 +67,8 @@ const mtlData = [
     mtl_value: 5,
     mtl_print_time: 30,
     mtl_3d_img_path: './mtl_3d_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
-    mtl_3d_normalmap_img_path: './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
+    mtl_3d_normalmap_img_path:
+      './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
     mtl_sugar: 2.5,
     mtl_oil: 0,
     mtl_protein: 20,
@@ -81,7 +86,8 @@ const mtlData = [
     mtl_value: 5,
     mtl_print_time: 30,
     mtl_3d_img_path: './mtl_3d_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
-    mtl_3d_normalmap_img_path: './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
+    mtl_3d_normalmap_img_path:
+      './mtl_3d_normalmap_img_path/f2b74d288e7123720ac3fe25345f1eae.jfif',
     mtl_sugar: 2.5,
     mtl_oil: 0,
     mtl_protein: 20,

@@ -3,12 +3,13 @@ import { ReactComponent as Logo } from '../../../imgs/logo.svg';
 import { ReactComponent as Rectangle } from '../../../imgs/rectangle.svg';
 import { ReactComponent as ArrR } from '../../../imgs/arrow-right-noccircle.svg';
 import { useState } from 'react';
-import { mtlData } from './../sushiMtlTest';
 
 function MtlLeft(props) {
+  // console.log(props.mtlData);
   const [openLArea, setOpenLArea] = useState(false);
   // const [chooseMtl, setChooseMtl] = useState(false);
-  const [mtlActive, setMtlActive] = useState(-1);
+  const [mtlActive, setMtlActive] = useState([1]);
+  const { setAddMtlData } = props;
 
   return (
     <>
@@ -51,34 +52,19 @@ function MtlLeft(props) {
               </div>
             </div>
             <div className="mtlBtnIn-L d-flex flex-wrap pt-3 px-2">
-              {mtlData.map((e, i) => {
-                const {
-                  mtl_id,
-                  mtl_name,
-                  mtl_cate,
-                  mtl_produce_date,
-                  mtl_raw_matrials,
-                  mtl_img_path,
-                  mtl_value,
-                  mtl_print_time,
-                  mtl_3d_img_path,
-                  mtl_3d_normalmap_img_path,
-                  mtl_sugar5,
-                  mtl_oil,
-                  mtl_protein,
-                  mtl_carbo,
-                  mtl_na,
-                  mtl_calories,
-                } = e;
+              {props.mtlData.map((e) => {
+                const { mtl_id, mtl_name, mtl_cate, mtl_img_path } = e;
+
                 return (
                   <MtlLBtn
                     key={mtl_id}
                     mtl_id={mtl_id}
                     mtl_name={mtl_name}
+                    mtl_cate={mtl_cate}
                     mtl_img_path={mtl_img_path}
                     setMtlActive={setMtlActive}
-                    // onClick={() => setMtlActive(i)}
-                    //onClick={() => console.log(i)}
+                    mtlActive={mtlActive}
+                    setAddMtlData={setAddMtlData(mtlActive)} // 要加不然資料傳不上去
                   />
                 );
               })}
