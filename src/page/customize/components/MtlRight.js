@@ -55,6 +55,7 @@ function MtlRight(props) {
               </div>
             </div>
             <div className="mtlBtnIn-R pt-3 px-2">
+              <div className="fix"></div>
               {Object.keys(props.addMtlData).length === 0
                 ? ''
                 : props.addMtlData.map((e, i) => {
@@ -97,14 +98,14 @@ function MtlRight(props) {
                     );
                   })} */}
             </div>
-            <div className="btn">
-              <button className="btn-sm btn-outline-primary primeal-btn-outline m-2">
-                儲存編輯
-              </button>
-              <button className="btn-sm btn-primary primeal-btn m-2">
-                下一步
-              </button>
-            </div>
+          </div>
+          <div className="btn">
+            <button className="btn-sm btn-outline-primary primeal-btn-outline m-2">
+              儲存編輯
+            </button>
+            <button className="btn-sm btn-primary primeal-btn m-2">
+              下一步
+            </button>
           </div>
         </div>
       </div>

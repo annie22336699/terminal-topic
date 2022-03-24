@@ -4,22 +4,25 @@ import MtlLeft from './components/MtlLeft';
 import MtlMid from './components/MtlMid';
 import MtlRight from './components/MtlRight';
 import { useEffect, useState } from 'react';
-import { mtlData } from './sushiMtlTest';
+// import { mtlData } from './sushiMtlTest';
 import config from '../../Config';
 
 function Customize() {
+  const [mtlDataSQL, setMtlDataSQL] = useState({});
   const [addMtlData, setAddMtlData] = useState({});
 
-  // useEffect(() => {
-  //   const catchData = async () => {
-  //     const mtlRes = await fetch(config.GET_MTLS);
-  //     const mtlObj = await mtlRes.json();
-  //     const mtlData = mtlObj.rows;
+  // 接SQL資料
+  useEffect(() => {
+    const catchData = async () => {
+      const mtlRes = await fetch(config.GET_MTLS);
+      const mtlObj = await mtlRes.json();
+      const mtlDatas = mtlObj.rows;
 
-  //     console.log(mtlData);
-  //   };
-  //   catchData();
-  // }, []);
+      setMtlDataSQL(mtlDatas);
+    };
+    catchData();
+  }, []);
+  // console.log('mtlDataSQL:', mtlDataSQL);
 
   return (
     <>
@@ -29,17 +32,17 @@ function Customize() {
       <div className="container-fluid customize">
         <div className="row mtlView">
           <MtlLeft
-            mtlData={mtlData}
+            mtlData={mtlDataSQL}
             addMtlData={addMtlData}
             setAddMtlData={setAddMtlData}
           />
           <MtlMid
-            mtlData={mtlData}
+            mtlData={mtlDataSQL}
             addMtlData={addMtlData}
             setAddMtlData={setAddMtlData}
           />
           <MtlRight
-            mtlData={mtlData}
+            mtlData={mtlDataSQL}
             addMtlData={addMtlData}
             setAddMtlData={setAddMtlData}
           />
