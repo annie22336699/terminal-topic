@@ -8,7 +8,9 @@ import { useState } from 'react';
 
 function MtlRight(props) {
   const [openRArea, setOpenRArea] = useState(false);
-  // const [removeMtl, setRemoveMtl] = useState([]);
+
+  const chooseItems = ['選擇食材', '營養分析'];
+  const [changeChoose, setChangeChoose] = useState('選擇食材');
   const { addMtlData, setAddMtlData } = props;
   // console.log(props.addMtlData);
 
@@ -45,14 +47,26 @@ function MtlRight(props) {
           </div>
           <div className="mtlBtn-r col p-0">
             <div className="d-flex choose ch-title-16">
-              <div className="dec col-12">
-                <Rectangle className="rectangle" />
-                <div>選擇食材</div>
-              </div>
-              <div className="ing col-12">
-                <Rectangle className="rectangle" />
-                <div>營養分析</div>
-              </div>
+            {chooseItems.map((v, i) => {
+                return (
+                  <div
+                    key={i}
+                    className="mtlCate col-12"
+                    onClick={() => {
+                      setChangeChoose(v);
+                    }}
+                  >
+                    <Rectangle
+                      className={
+                        changeChoose === v ? 'rectangle' : 'rectangle-displaynone'
+                      }
+                    />
+                    <div className={changeChoose === v ? '' : 'mtl-cate-blur'}>
+                      {v}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <div className="mtlBtnIn-R pt-3 px-2">
               <div className="fix"></div>
