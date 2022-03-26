@@ -1,21 +1,14 @@
 import config from '../../../Config';
 
 function MtlLBtn(props) {
-  const {
-    mtl_id,
-    mtl_name,
-    mtl_cate,
-    mtl_img_path,
-    mtlActive,
-    setMtlActive,
-    test,
-  } = props;
+  const { mtl_id, mtl_name, mtl_img_path, mtlActive, setMtlActive, test } =
+    props;
 
   return (
     <div
       className="mtlLBtn col-8 my-3"
       onClick={() => {
-        setMtlActive([...mtlActive, mtl_id]);
+        setMtlActive([mtl_id, ...mtlActive]);
       }}
     >
       <div className="mtlimg">

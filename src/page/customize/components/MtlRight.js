@@ -4,7 +4,9 @@ import { ReactComponent as Help } from '../../../imgs/help-circle.svg';
 import { ReactComponent as Rectangle } from '../../../imgs/rectangle.svg';
 import { ReactComponent as ArrL } from '../../../imgs/arrow-left-noccircle.svg';
 import MtlRBtn from './MtlRBtn';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import config from '../../../Config';
 
 function MtlRight(props) {
   const [openRArea, setOpenRArea] = useState(false);
@@ -13,6 +15,17 @@ function MtlRight(props) {
   const [changeChoose, setChangeChoose] = useState('選擇食材');
   const { addMtlData, setAddMtlData } = props;
   // console.log(props.addMtlData);
+
+  const postCusData = async () => {
+    const res = await fetch(config.POST_CUS_DATA, {
+      method: 'POST',
+      headers: { 'content-type': 'applicstion/json' },
+      body: JSON.stringify({ mtl_name: props.addMtlData.mtl_name }),
+    });
+    const resJson = await res.json();
+    console.log('resJson: ', resJson);
+    console.log('res: ', res);
+  };
 
   return (
     <>
@@ -47,7 +60,7 @@ function MtlRight(props) {
           </div>
           <div className="mtlBtn-r col p-0">
             <div className="d-flex choose ch-title-16">
-            {chooseItems.map((v, i) => {
+              {chooseItems.map((v, i) => {
                 return (
                   <div
                     key={i}
@@ -58,7 +71,9 @@ function MtlRight(props) {
                   >
                     <Rectangle
                       className={
-                        changeChoose === v ? 'rectangle' : 'rectangle-displaynone'
+                        changeChoose === v
+                          ? 'rectangle'
+                          : 'rectangle-displaynone'
                       }
                     />
                     <div className={changeChoose === v ? '' : 'mtl-cate-blur'}>
@@ -72,7 +87,7 @@ function MtlRight(props) {
               <div className="fix"></div>
               {Object.keys(props.addMtlData).length === 0
                 ? ''
-                : props.addMtlData.map((e, i) => {
+                : props.addMtlData.reverse().map((e, i) => {
                     {
                       /* const { mtl_id, mtl_name, mtl_cate, mtl_img_path } = e; */
                     }
@@ -88,7 +103,7 @@ function MtlRight(props) {
 
                     return (
                       <MtlRBtn
-                        key={takeMtlId.mtl_id + Math.ceil(Math.random() * 1000)}
+                        key={i}
                         mtl_id={takeMtlId.mtl_id}
                         mtl_name={takeMtlId.mtl_name}
                         mtl_cate={takeMtlId.mtl_cate}
@@ -114,12 +129,17 @@ function MtlRight(props) {
             </div>
           </div>
           <div className="btn">
-            <button className="btn-sm btn-outline-primary primeal-btn-outline m-2">
+            <button
+              className="btn-sm btn-outline-primary primeal-btn-outline m-2"
+              onClick={postCusData}
+            >
               儲存編輯
             </button>
-            <button className="btn-sm btn-primary primeal-btn m-2">
-              下一步
-            </button>
+            <Link to="./CusMiDetail">
+              <button className="btn-sm btn-primary primeal-btn m-2">
+                下一步
+              </button>
+            </Link>
           </div>
         </div>
       </div>

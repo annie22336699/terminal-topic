@@ -21,6 +21,7 @@ const config = {
 
   // 客製商品
   GET_MTLS: `${host}/customize/api/getmtls`,
+  POST_CUS_DATA: `${host}/customize/api/postcusdata`,
 
   // 套餐
 
