@@ -114,7 +114,7 @@ function MtlLeft(props) {
                         mtl_img_path={mtl_img_path}
                         setMtlActive={setMtlActive}
                         mtlActive={mtlActive}
-                        test={mtlActive.includes(mtl_id) ? true : false}
+                        addclass={mtlActive.includes(mtl_id) ? true : false}
                         setAddMtlData={setAddMtlData(mtlActive)} // 要加不然資料傳不上去
                       />
                     );

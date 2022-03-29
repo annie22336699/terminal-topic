@@ -10,6 +10,7 @@ import config from '../../Config';
 function Customize() {
   const [mtlDataSQL, setMtlDataSQL] = useState({});
   const [addMtlData, setAddMtlData] = useState({});
+  // const [addMtlData, setAddMtlData] = useState({ mtl_id: 1, mtl_pct: 1 });
 
   // 接SQL資料
   useEffect(() => {
@@ -36,11 +37,7 @@ function Customize() {
             addMtlData={addMtlData}
             setAddMtlData={setAddMtlData}
           />
-          <MtlMid
-            mtlData={mtlDataSQL}
-            addMtlData={addMtlData}
-            setAddMtlData={setAddMtlData}
-          />
+          <MtlMid mtlData={mtlDataSQL} addMtlData={addMtlData} />
           <MtlRight
             mtlData={mtlDataSQL}
             addMtlData={addMtlData}

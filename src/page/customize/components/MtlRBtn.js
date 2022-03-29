@@ -2,15 +2,7 @@ import { ReactComponent as Del } from '../../../imgs/del.svg';
 import config from '../../../Config';
 
 function MtlRBtn(props) {
-  const {
-    mtl_id,
-    mtl_name,
-    mtl_cate,
-    mtl_img_path,
-    removeMtl,
-    setRemoveMtl,
-    i,
-  } = props;
+  const { mtl_id, mtl_name, mtl_img_path, removeMtl, setRemoveMtl, i, } = props;
   // console.log(props);
   const del = () => {
     let originalMtlArr = removeMtl;
@@ -24,6 +16,9 @@ function MtlRBtn(props) {
         <img src={`${config.HOST}${mtl_img_path}`} alt={mtl_name} />
       </div>
       <div className="mtlname-r ch-cont-16 col px-4">{mtl_name}</div>
+      {/* <div onClick={()=>{setPct(pct + 1)}}>+</div>
+      <div>{pct.aaa}</div>
+      <div onClick={()=>{setPct(pct -1)}}>-</div> */}
       <Del className="mtlDelIcon" onClick={del} />
     </div>
   );

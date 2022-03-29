@@ -4,7 +4,7 @@ import { ReactComponent as Help } from '../../../imgs/help-circle.svg';
 import { ReactComponent as Rectangle } from '../../../imgs/rectangle.svg';
 import { ReactComponent as ArrL } from '../../../imgs/arrow-left-noccircle.svg';
 import MtlRBtn from './MtlRBtn';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../../Config';
 
@@ -19,12 +19,11 @@ function MtlRight(props) {
   const postCusData = async () => {
     const res = await fetch(config.POST_CUS_DATA, {
       method: 'POST',
-      headers: { 'content-type': 'applicstion/json' },
-      body: JSON.stringify({ mtl_name: props.addMtlData.mtl_name }),
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ mtl_id: props.addMtlData }),
     });
     const resJson = await res.json();
     console.log('resJson: ', resJson);
-    console.log('res: ', res);
   };
 
   return (
@@ -84,7 +83,6 @@ function MtlRight(props) {
               })}
             </div>
             <div className="mtlBtnIn-R pt-3 px-2">
-              <div className="fix"></div>
               {Object.keys(props.addMtlData).length === 0
                 ? ''
                 : props.addMtlData.reverse().map((e, i) => {
@@ -111,6 +109,8 @@ function MtlRight(props) {
                         removeMtl={addMtlData}
                         setRemoveMtl={setAddMtlData}
                         i={i}
+                        // pct={pct}
+                        // setPct={setPct}
                       />
                     );
                   })}
