@@ -86,11 +86,9 @@ function MtlRight(props) {
               {Object.keys(props.addMtlData).length === 0
                 ? ''
                 : props.addMtlData.reverse().map((e, i) => {
-                    {
-                      /* const { mtl_id, mtl_name, mtl_cate, mtl_img_path } = e; */
-                    }
+                    {/* const { mtl_id, mtl_name, mtl_cate, mtl_img_path } = e; */}
                     const takeMtlId = props.mtlData.find(
-                      (p) => p.mtl_id === props.addMtlData[i]
+                      (p) => p.mtl_id === props.addMtlData[i].mtlId
                     );
                     {
                       /* 每次找到陣列內的第幾項的id都去撈mtl_id數據比對 */
