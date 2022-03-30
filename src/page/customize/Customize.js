@@ -9,8 +9,8 @@ import config from '../../Config';
 
 function Customize() {
   const [mtlDataSQL, setMtlDataSQL] = useState({});
-  const [addMtlData, setAddMtlData] = useState({});
-
+  const [addMtlData, setAddMtlData] = useState([]);
+  //{ mtlId: 1, mtlPct: 1 }
   // 接SQL資料
   useEffect(() => {
     const catchData = async () => {
@@ -21,8 +21,11 @@ function Customize() {
       setMtlDataSQL(mtlDatas);
     };
     catchData();
+    setAddMtlData([{ mtlId: 1, mtlPct: 1 }]);
   }, []);
-  // console.log('mtlDataSQL:', mtlDataSQL);
+  
+  // console.log('father\'s mtlDataSQL:', mtlDataSQL);
+  // console.log('father\'s addMtlData:', addMtlData);
 
   return (
     <>

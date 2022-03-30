@@ -36,8 +36,8 @@ function MtlLeft(props) {
 
   // 食材選擇
   // const [mtlActive, setMtlActive] = useState([1]);
-  const [mtlActive, setMtlActive] = useState([{ mtlId: 1, mtlPct: 1 }]);
-  const { setAddMtlData } = props;
+  // const [mtlActive, setMtlActive] = useState([{ mtlId: 1, mtlPct: 1 }]);
+  const { addMtlData, setAddMtlData } = props;
 
   return (
     <>
@@ -113,15 +113,15 @@ function MtlLeft(props) {
                         mtl_id={mtl_id}
                         mtl_name={mtl_name}
                         mtl_img_path={mtl_img_path}
-                        setMtlActive={setMtlActive}
-                        mtlActive={mtlActive}
+                        setMtlActive={setAddMtlData}
+                        mtlActive={addMtlData}
                         // addclass={mtlActive.includes(mtl_id) ? true : false}
                         addclass={
-                          mtlActive.some((a) => a.mtlId === mtl_id)
+                          addMtlData.some((a) => a.mtlId === mtl_id)
                             ? true
                             : false
                         }
-                        setAddMtlData={setAddMtlData(mtlActive)} // 要加不然資料傳不上去
+                        // setAddMtlData={setAddMtlData(mtlActive)} // 要加不然資料傳不上去
                       />
                     );
                   })}

@@ -4,7 +4,7 @@ import { ReactComponent as Help } from '../../../imgs/help-circle.svg';
 import { ReactComponent as Rectangle } from '../../../imgs/rectangle.svg';
 import { ReactComponent as ArrL } from '../../../imgs/arrow-left-noccircle.svg';
 import MtlRBtn from './MtlRBtn';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../../../Config';
 
@@ -15,6 +15,8 @@ function MtlRight(props) {
   const [changeChoose, setChangeChoose] = useState('選擇食材');
   const { addMtlData, setAddMtlData } = props;
   // console.log(props.addMtlData);
+  // console.log(props.mtlData);
+
 
   const postCusData = async () => {
     const res = await fetch(config.POST_CUS_DATA, {
@@ -85,16 +87,21 @@ function MtlRight(props) {
             <div className="mtlBtnIn-R pt-3 px-2">
               {Object.keys(props.addMtlData).length === 0
                 ? ''
-                : props.addMtlData.reverse().map((e, i) => {
-                    {/* const { mtl_id, mtl_name, mtl_cate, mtl_img_path } = e; */}
-                    const takeMtlId = props.mtlData.find(
-                      (p) => p.mtl_id === props.addMtlData[i].mtlId
-                    );
+                : props.addMtlData.map((el, i) => {
                     {
-                      /* 每次找到陣列內的第幾項的id都去撈mtl_id數據比對 */
+                      /* const { mtl_id, mtl_name, mtl_cate, mtl_img_path } = e; */
+                    }
+                    const takeMtlId =
+                      Object.keys(props.mtlData).length === 0
+                        ? ''
+                        : props.mtlData.find(
+                            (p) => p.mtl_id === props.addMtlData[i].mtlId
+                          );
+                    {
+                      /* console.log(takeMtlId) */
                     }
                     {
-                      /* console.log(takeMtlId.mtl_id); */
+                      /* 每次找到陣列內的第幾項的id都去撈mtl_id數據比對 */
                     }
 
                     return (
@@ -106,24 +113,11 @@ function MtlRight(props) {
                         mtl_img_path={takeMtlId.mtl_img_path}
                         removeMtl={addMtlData}
                         setRemoveMtl={setAddMtlData}
+                        el={el}
                         i={i}
-                        // pct={pct}
-                        // setPct={setPct}
                       />
                     );
                   })}
-              {/* {props.mtlData.map((e) => {
-                    const { mtl_id, mtl_name, mtl_cate, mtl_img_path } = e;
-                    return (
-                      <MtlRBtn
-                        key={mtl_id}
-                        mtl_id={mtl_id}
-                        mtl_name={mtl_name}
-                        mtl_cate={mtl_cate}
-                        mtl_img_path={mtl_img_path}
-                      />
-                    );
-                  })} */}
             </div>
           </div>
           <div className="btn">
