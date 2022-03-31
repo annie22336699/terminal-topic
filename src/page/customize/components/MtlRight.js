@@ -17,12 +17,14 @@ function MtlRight(props) {
   // console.log(props.addMtlData);
   // console.log(props.mtlData);
 
-
   const postCusData = async () => {
     const res = await fetch(config.POST_CUS_DATA, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ mtl_id: props.addMtlData }),
+      body: JSON.stringify({
+        cm_prod: props.addMtlData,
+        memid: localStorage.getItem('mem_id'),
+      }),
     });
     const resJson = await res.json();
     console.log('resJson: ', resJson);
