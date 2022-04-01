@@ -15,7 +15,7 @@ function MtlLBtn(props) {
     <div
       className="mtlLBtn col-8 my-3"
       onClick={() => {
-        if (countTotal(mtlActive) >= 10 ) {
+        if (countTotal(mtlActive) >= 10) {
           return false;
         }
         const newList = [...mtlActive];
