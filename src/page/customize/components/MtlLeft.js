@@ -3,6 +3,7 @@ import { ReactComponent as Logo } from '../../../imgs/logo.svg';
 import { ReactComponent as Rectangle } from '../../../imgs/rectangle.svg';
 import { ReactComponent as ArrR } from '../../../imgs/arrow-right-noccircle.svg';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function MtlLeft(props) {
   // console.log(props.mtlData);
@@ -51,7 +52,9 @@ function MtlLeft(props) {
       >
         <div className="la-menu col px-0">
           <div className="logoMtl">
-            <Logo className="logoMtl-box" />
+            <Link to="/" className="logoMtl-box">
+              <Logo />
+            </Link>
             <div className="col-12" />
           </div>
           <div className="mtlBtn-l col p-0">
